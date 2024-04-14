@@ -5,12 +5,18 @@
 
 import React from "react" ;
 import { Link } from "react-router-dom";
+import {useLocation } from  "react-router-dom" ;  
+
 function Navbar (){
+    const location = useLocation();
+
     return (
  <div className="navbar">
   <Link to ={"/"}>Home</Link> 
-  <Link to = "/rules"> Rules</Link>
-  <Link to= "/LeaderBoard"> LeaderBoard</Link>
+  <Link to = {"/rules"}> Rules</Link>
+
+  {(location.pathname === "/") ?   <Link to= {"/LeaderBoard" } > LeaderBoard</Link> :  <Link to= {"/submit/LeaderBoard" } > LeaderBoard</Link> 
+} 
  </div>
 
     );

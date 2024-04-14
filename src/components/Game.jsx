@@ -14,6 +14,8 @@ image : "bomb-solid.svg" }
 ] ;
 
 
+
+
 // for shuffled Cards everytime 
 function shuffle(cards){
 
@@ -34,6 +36,12 @@ return shuffledArray;
 
 const newCardsArray = shuffle(cards);
 
+// function handleClick(cards) {
+//   for(let i = 0 ; i <cards.length ; i++){
+//      if(cards[i])
+//   }    
+// }
+
 //return cards to display 
 
 return (
@@ -43,6 +51,7 @@ return (
 {newCardsArray.map((cards)=>{
 return (
 <Card
+// onClick = {handleClick}
 cardName = {cards.cardName}
 image = {cards.image}
  />

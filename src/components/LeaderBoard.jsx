@@ -8,16 +8,17 @@ function LeaderBoard () {
     const navigate = useNavigate();
     const [show, setShow] = useState(false);
     const location = useLocation();
-   
+    let path = new URL(".", window.origin + location.pathname + "/")
+
 
     const handleClose = () =>{
-         setShow(false);
-         navigate("..", { relative: "/" });
-    }
+         setShow(false); 
+         navigate("..", { relative: path });
+     } 
 
   
     useEffect ( ()=> {
-        if(location.pathname == "/LeaderBoard") {
+        if(location.pathname === "/LeaderBoard" || location.pathname === "/submit/LeaderBoard" ) {
             setShow(true);
         } else {
             setShow(false);
@@ -26,7 +27,7 @@ function LeaderBoard () {
   
     return (
       <>
-        <Modal show={show} onHide={handleClose} >
+        <Modal show={show} >
           <Modal.Body>
           <Modal.Title>LeaderBoard</Modal.Title>
           Woohoo, you are reading this text in a modal!</Modal.Body>

@@ -11,8 +11,6 @@ import './App.css';
 import {createBrowserRouter , RouterProvider ,} from "react-router-dom";
 import './index.css'
 
-
-
 const router = createBrowserRouter ([
 {
   path: "/" ,
@@ -26,7 +24,7 @@ const router = createBrowserRouter ([
     },
 
     {
-      path : "/LeaderBoard" ,
+      path : "LeaderBoard" ,
       element : <LeaderBoard /> ,
      
     }
@@ -41,6 +39,11 @@ const router = createBrowserRouter ([
       element : <Navbar /> ,
     
     },
+
+    {
+      path: "/submit/LeaderBoard" ,
+      element : <LeaderBoard />
+    }
 
   ]
 

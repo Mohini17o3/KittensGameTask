@@ -96,6 +96,11 @@ width: 95vw;
    z-index: 2;
    margin-left: 55vw;
    margin-top: 40vh;
+   background-color:	rgb(122, 31, 31 , 0.8);
+   padding: 2%;
+   border-radius: 15px;
+   box-shadow:2px 2px 6px 0 black;
+
  }
  @media screen and (max-width: 476px) and (max-width: 978px) {
   .loginForm  form{
@@ -125,7 +130,7 @@ width: 95vw;
       
       }
       .loginForm  label{
-        font-size: 1.2rem;
+        font-size: 1.3rem;
        
        }
   
@@ -133,10 +138,14 @@ width: 95vw;
   
   .navbar {
     position: fixed;
-    top: 0 ;
-    
+    top: 2% ;
+    left: 40%;
+    background-color:	rgb(122, 31, 31 , 0.8);
+    border-radius: 15px;
+    padding: 0.5%;
+    box-shadow:2px 2px 6px 0 black ;
   }
-  
+
 .modal {
   z-index: 100;
   margin-left: 40%;
@@ -145,7 +154,6 @@ width: 95vw;
   align-items: center;
   justify-content: center;
   background-color:	rgb(122, 31, 31 , 0.8);
-  box-shadow: black 20px;
   padding: 2%;
   border-radius: 10px;
 }

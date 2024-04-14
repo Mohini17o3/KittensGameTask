@@ -4,13 +4,14 @@ import {Outlet} from "react-router-dom" ;
 
 
 function LoginForm() {
-    const [checkInput , setCheckInput] = useState("");
+ const [checkInput , setCheckInput] = useState("");
 
 function handleClick(event){
-console.log(event.target.value);
+
 setCheckInput (event.target.value);
 
 }
+
 
 return (
     <>
@@ -18,9 +19,13 @@ return (
 <div className="loginForm">
 <form >
 <label htmlFor= "username"> Username : </label> 
-<input onClick = {handleClick} type = "text" id="username" placeholder="Enter a username" /> 
+<input onChange = {handleClick} type = "text" id="username" placeholder="Enter a username" /> 
+{
+    (checkInput != "" ) ? (
+    <Link to = {`/submit`} ><button>  Start !!</button> </Link> ) : <button disabled >  Start !!</button> 
 
-<Link to = {`/submit`} ><button>  Start !!</button> </Link> 
+}
+ 
 
 </form> 
 
