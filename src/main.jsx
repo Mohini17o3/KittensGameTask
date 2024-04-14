@@ -27,6 +27,11 @@ const router = createBrowserRouter ([
       path : "LeaderBoard" ,
       element : <LeaderBoard /> ,
      
+    },
+    {
+      path : "rules" ,
+      element : <Rules /> ,
+     
     }
   ]
 },
@@ -43,6 +48,11 @@ const router = createBrowserRouter ([
     {
       path: "/submit/LeaderBoard" ,
       element : <LeaderBoard />
+    }
+    ,
+    {
+      path: "/submit/rules" ,
+      element : <Rules />
     }
 
   ]

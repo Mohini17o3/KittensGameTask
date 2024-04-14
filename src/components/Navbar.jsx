@@ -13,10 +13,11 @@ function Navbar (){
     return (
  <div className="navbar">
   <Link to ={"/"}>Home</Link> 
-  <Link to = {"/rules"}> Rules</Link>
 
-  {(location.pathname === "/") ?   <Link to= {"/LeaderBoard" } > LeaderBoard</Link> :  <Link to= {"/submit/LeaderBoard" } > LeaderBoard</Link> 
-} 
+  {(location.pathname === "/") ?   <Link to= {"/rules" } > Rules</Link> :  <Link to= {"/submit/rules" } > Rules</Link> }
+
+  {(location.pathname === "/") ?   <Link to= {"/LeaderBoard" } > LeaderBoard</Link> :  <Link to= {"/submit/LeaderBoard" } > LeaderBoard</Link> }
+
  </div>
 
     );
