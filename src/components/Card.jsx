@@ -5,9 +5,33 @@ function Card (props) {
 
 // const [hiddenCard , setHiddenCard] = useState[false];
 const [showCard , setShowCard] = useState(false);
-function handleClick () {
+
+
+async function handleClick () {
+
 setShowCard(!showCard);
-setHiddenCard(true);
+const audioplay = new Audio(props.audio);
+    audioplay.play();
+
+    const response  = await fetch("/api/draw-card" ,  {
+     method : "POST" ,
+     headers: {
+        "Content-Type" : "application/json" }  ,
+        body : JSON.stringify( {cardName: props.cardName }),
+     });
+
+     const data = await response.json();
+    
+    if (data.gameOver) {
+        alert("Game Over !");
+        window.location.reload();
+    } else {
+        if (props.cardName === "Yay ! Cat Card " || props.cardName === "Defused") {
+            setTimeout(()=>{
+                setShowCard(false);
+            } , 2000);
+        }
+    }
 
 }
 

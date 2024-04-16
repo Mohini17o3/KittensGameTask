@@ -3,23 +3,25 @@ import Card from "./Card";
 import {Outlet} from "react-router-dom"
 function Game() {
 const cards = [
-{ cardName : "Yay ! Cat Card " , image : "shield-cat-solid.svg"  } ,
-{cardName : "Defused " , image : "face-smile-wink-solid.svg" } ,
-{cardName : "Shuffling",
-image : "shuffle-solid.svg" } ,
+{ cardName : "Yay ! Cat Card " , image : "shield-cat-solid.svg"  , audio : "cat-card.mp3.mp3" } ,
+{cardName : "Defused " , image : "face-smile-wink-solid.svg" , audio : "defuse.mp3.mp3"} ,
+{cardName : "Shuffling", image : "shuffle-solid.svg" , audio : "card-shuffle.mp3.mp3" } ,
 
-{cardName : "Oops Bomb" , 
-image : "bomb-solid.svg" }
+{cardName : "Oops Bomb" , image : "bomb-solid.svg" , audio : "bomb-card.mp3.mp3"},
+{cardName : "Defused " , image : "face-smile-wink-solid.svg" , audio : "defuse.mp3.mp3"} ,
+{cardName : "Defused " , image : "face-smile-wink-solid.svg" , audio : "defuse.mp3.mp3"} ,
+{ cardName : "Yay ! Cat Card " , image : "shield-cat-solid.svg"  , audio : "cat-card.mp3.mp3" } ,
+
+
 
 ] ;
-
-
 
 
 // for shuffled Cards everytime 
 function shuffle(cards){
 
 const shuffledArray = [...cards] ;
+
 
 
 for( let i = 0 ; i <shuffledArray.length ; i ++){
@@ -36,11 +38,8 @@ return shuffledArray;
 
 const newCardsArray = shuffle(cards);
 
-// function handleClick(cards) {
-//   for(let i = 0 ; i <cards.length ; i++){
-//      if(cards[i])
-//   }    
-// }
+const fourCardsArray = newCardsArray.slice(0, 5);
+
 
 //return cards to display 
 
@@ -48,17 +47,15 @@ return (
 
 <div className="GameInterfaceStyle">
 <Outlet />
-{newCardsArray.map((cards)=>{
+{fourCardsArray.map((cards)=>{
 return (
-<Card
-// onClick = {handleClick}
-cardName = {cards.cardName}
-image = {cards.image}
- />
-);
+  <Card
+    cardName = {cards.cardName}
+    image = {cards.image}
+    audio = {cards.audio}
 
-}
-) 
+ />
+);}) 
 
 }
 
